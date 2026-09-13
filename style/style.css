@@ -1,11 +1,5 @@
 /* style="position: absolute; height:  100vh; top: 0; left: 0" */
 
-#bg {
-    position: absolute;
-    height: 100vh;
-    top: 0;
-    left: 0;
-}
 
 * {
     box-sizing: border-box;
@@ -36,4 +30,28 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+#scene::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+        linear-gradient(
+            to bottom,
+            transparent 55%,
+            rgba(0,0,0,0.75)
+        );
+}
+
+#character {
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 75%;
+    max-width: 60%;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
 }
