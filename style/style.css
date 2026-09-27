@@ -3,6 +3,7 @@
 
 * {
     box-sizing: border-box;
+    font-family: "Caveat", cursive;
 }
 
 html, body {
@@ -54,4 +55,82 @@ body {
     max-width: 60%;
     object-fit: contain;
     filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+}
+
+#dialogue {
+    position: absolute;
+    z-index: 10;
+    left: 5%;
+    right: 5%;
+    bottom: 30px;
+    padding: 20px 25px;
+    background: rgba(10, 10, 15, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+#speaker {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 5px 12px;
+    background: #feccce;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+}
+
+#text {
+    min-height: 55px;
+    margin-bottom: 15px;
+    font-size: 20px;
+    line-height: 1.5;
+}
+/* Поменяем кнопки, чтобы была бомба */
+#choices {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    gap: 10px;
+}
+#choices button {
+    flex: 1;
+    /* Ширина */
+    width: 99vw;
+    /* Высота */
+    height: 50px;
+    /* Цвет заднего фона */
+    background: rgba(0, 0, 0, 0.2);
+    /* Цвет текста */
+    color: white;
+    /* Грань */
+    border: none;
+    /* Размер текста */
+    font-size: 24px;
+    /* Курсор */
+    cursor: pointer;
+    transition: 0.4s;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#choices button:hover {
+    /* При наведеление изменить задний фон */
+    background: rgba(0, 0, 0, 0.6);
+    /* При наведеление изменить цвет грани */
+    border-color: white;
+    /* При наведеление изменить тени */
+    box-shadow: 0 0 15px 4px rgba(255, 255, 255, 0.3);
 }
